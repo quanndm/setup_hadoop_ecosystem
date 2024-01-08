@@ -140,3 +140,32 @@ hdfs namenode -format
 ```bash
 start-all.sh
 ```
+
+## config spark
+- download spark
+```bash
+# for example
+wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz
+```
+
+- extract file
+```bash
+tar -zxvf spark-3.5.0-bin-hadoop3.tgz
+```
+
+- (optional) rename file
+```bash
+mv spark-3.5.0-bin-hadoop3/ spark
+```
+
+- edit ~/.bashrc file
+```sh
+# add these to end of file
+export SPARK_HOME=/home/hadoop/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+```
+
+- re-run ~/.bashrc file
+```bash
+source ~/.bashrc
+```
